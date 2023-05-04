@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    
+</head>
+<h2>HTML Forms</h2>
+<script>
+  function calculateMonths(startdate,enddate){
+    
+    
+    // Specify the start and end dates
+
+
+    // Calculate the number of months between the start and end dates
+    const startDate = new Date(startdate);
+    const endDate = new Date(enddate);
+    const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  
+    return months;
+
+  }
+  
+  function calculate(){
+    var principal=document.getElementById("principal").value;
+    var startdate=document.getElementById("startdate").value;
+    var startmonth=document.getElementById("startmonth").value;
+    var startyear=document.getElementById("startyear").value;
+    var enddate=document.getElementById("enddate").value;
+    var endmonth=document.getElementById("endmonth").value;
+    var endyear=document.getElementById("endyear").value;
+    var rate=document.getElementById("rate").value;
+
+    // var month= calculateMonths(startyear+'-'+startmonth+'-'+startdate,endyear+'-'+endmonth+'-'+enddate);
+    var m=calculateMonths(startyear+'-'+startmonth+'-'+startdate,endyear+'-'+endmonth+'-'+enddate);
+    
+
+
+    var amount=(principal*rate*m)/100;
+    document.write('Rs'+amount);
+}
+
+</script>
+
+<form>
+  <label for="fname1">principal</label><br>
+  <input type="text" id="principal" name="principal" value=""><br>
+  <div>
+    <label for="lname2">start date</label><br>
+    <input type="text" id="startdate" name="startdate" value=""><br><br>
+  
+  
+    <label for="fname3">start month</label><br>
+    <input type="text" id="startmonth" name="startmonth" value=""><br>
+
+    <label for="lname3">start year</label><br>
+    <input type="text" id="startyear" name="startyear" value=""><br><br>
+  </div>
+ 
+  <div>
+  <label for="lname4">end date</label><br>
+
+  <input type="text" id="enddate" name="enddate" value=""><br><br>
+  <label for="fname4">end month</label><br>
+  <input type="text" id="endmonth" name="endmonth" value=""><br>
+  <label for="lname5">end year</label><br>
+  <input type="text" id="endyear" name="endyear" value=""><br><br>
+  
+ 
+</div>
+<br>
+
+<label for="lname6">rate :</label><br>
+<input type="text" id="rate" name="rate" value=""><br><br>
+
+  <button onclick="calculate()">ADD</button>
+</form> 
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+</style>
+
+<!-- <script>
+    var form= document.getElementById('myform')
+
+    form.addEventListener('submit',function(event)
+    {
+        event.preventDefault()
+        var principal=document.getElementById("principal").value;
+        console.log(principal);
+    var startdate=document.getElementById("startdate").value;
+    var startmonth=document.getElementById("startmonth").value;
+    var startyear=document.getElementById("startyear").value;
+    var enddate=document.getElementById("enddate").value;
+    var endmonth=document.getElementById("endmonth").value;
+    var endyear=document.getElementById("endyear").value;
+    })
+</script> -->
+
+</body>
+</html> 
